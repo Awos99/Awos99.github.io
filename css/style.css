@@ -1,0 +1,358 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #083b34;
+    --secondary-color: #ffe9fa;
+    --tertiary-color: white;
+    --quaternary-color: #808080;
+    --quinary-color: #000000;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #0a4f45;
+    background-color: var(--tertiary-color);
+    padding-top: 80px;
+}
+
+header {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-bar-el {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar-logo {
+    width: 20%;
+    font-size: 1.2em;
+}
+
+.nav-bar-cv {
+    width: 20%;
+}
+
+.logo {
+    text-decoration: none;
+    color: inherit;
+}
+.nav-text {
+    width: 17%;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+main section {
+    background: var(--tertiary-color);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: var(--tertiary-color);
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: var(--secondary-color);
+}
+
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hero-text {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 20px 20px;
+}
+
+.hero-image {
+    flex-basis: 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Adjust the border-radius as needed */
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--primary-color); /* This is an example color; adjust as needed */
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: var(--tertiary-color); /* This is an example color; adjust as needed */
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.link-button {
+    text-decoration: none;
+}
+.nav-button {
+    font-size: 1.2em;
+}
+
+
+.presentation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: var(--tertiary-color);
+}
+
+.funfacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    background: var(--secondary-color); /* Example background color */
+    padding: 20px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.funfacts-content {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.funfacts-text {
+    width: 100%;
+    position: relative; /* Updated this line */
+}
+
+/* Additional styles to ensure visibility and layering */
+.funfacts-text .fact {
+    /* other styles remain the same */
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Ensure the width is 100% of the parent container */
+    transform: translate(100%, 0%); /* Center the text and move to the right initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; /* Start with the fact completely transparent */
+    pointer-events: none; /* Prevents mouse events when the fact is not active */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for movement and fading */
+}
+
+.funfacts-text .fact.prepare {
+    /* Slide in the active fact to the center from the right */
+    transform: translate(100%, 0%);
+    opacity: 0; /* Make the fact fully visible */
+    pointer-events: all; /* Enable mouse events when the fact is active */
+}
+
+.funfacts-text .fact.active {
+    /* Slide in the active fact to the center from the right */
+    transform: translate(0%, 0%);
+    opacity: 1; /* Make the fact fully visible */
+    pointer-events: all; /* Enable mouse events when the fact is active */
+}
+
+.funfacts-text .fact.exit {
+    /* Slide out the fact to the left */
+    transform: translateX(-100%);
+    opacity: 0; /* Fade out the fact */
+}
+
+.work {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    background: var(--primary-color); /* Example background color */
+    padding: 20px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.work-content {
+    display: flex;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    width: 100%;
+    height:200px;
+}
+
+.work-main {
+    width: 45%;
+    position: relative; /* Updated this line */
+    color:var(--tertiary-color);
+    text-align: left;
+}
+
+.work-description {
+    width: 55%;
+    position: relative; /* Updated this line */
+    color: var(--tertiary-color);
+    padding-left: 20px;
+    justify-self: right;
+    text-align: left;
+}
+
+.work-separator-line {
+    width: 100%;
+    position: relative; /* Updated this line */
+    color: var(--tertiary-color);
+}
+
+.work-separator-div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.work-title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:var(--tertiary-color);
+    text-align: left;
+}
+
+.education-content {
+    display: flex;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    align-items: flex-start;
+    width: 100%;
+    height:auto;
+}
+
+.education-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color:var(--tertiary-color);
+    text-align: left;
+    width: 45%;
+    padding-top: 10px;
+}
+
+.education-main {
+    width: 100%;
+    position: relative; /* Updated this line */
+    color:var(--tertiary-color);
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.education-description {
+    display: flex;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    width: 55%;
+    height:auto;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.skills-main {
+    display: flex;
+    width: 100%;
+    color:var(--tertiary-color);
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.skills-single {
+    display: flex;
+    width: 50%;
+    color:var(--tertiary-color);
+    text-align: center;
+}
