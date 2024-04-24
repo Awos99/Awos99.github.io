@@ -113,19 +113,30 @@ footer {
     padding: 20px 20px;
 }
 
+.container-image {
+    width: 85%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    height: 70vh;
     background-color: var(--secondary-color);
+    padding: 0 0;
+    margin: 0;
 }
 
 
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }
 
@@ -133,6 +144,15 @@ footer {
     flex-basis: 50%;
     max-width: 50%;
     padding: 20px 20px;
+}
+
+.container-hero {
+    width: 85%;
+    margin: auto;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-image {
